@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murano by Ferraro — Foodie</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #E54B4B;
+    --black: #0D0D0D;
+    --white: #FFFFFF;
+    --warm: #FAF9F7;
+    --gray-100: #F2F2F0;
+    --gray-200: #E8E6E3;
+    --gray-400: #C0BCB8;
+    --gray-500: #888581;
+    --gray-700: #4A4845;
+    --font: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--warm);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .topbar-logo img {
+    height: 32px;
+    display: block;
+    background: transparent;
+  }
+  .topbar-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--gray-200);
+  }
+  .topbar-client {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .topbar-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    padding: 88px 48px 80px;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; }
+  .hero-headline {
+    font-size: clamp(34px, 5.5vw, 58px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: #A8A39E;
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* SECTION WRAPPER */
+  .section {
+    padding: 72px 48px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .section-white { background: var(--white); }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+    margin-bottom: 32px;
+  }
+
+  /* INSIGHT BOX */
+  .insight {
+    background: var(--black);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: #A8A39E;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .insight strong { color: var(--white); font-weight: 600; }
+  .insight em { color: var(--red); font-style: normal; }
+
+  /* COMPETITOR LIST */
+  .comp-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
+  .comp-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: border-color 0.15s;
+  }
+  .comp-item:hover { border-color: var(--gray-400); }
+  .comp-left { display: flex; align-items: center; gap: 14px; }
+  .comp-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .comp-name:hover { color: var(--red); }
+  .comp-badge {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-direct { background: #FFF0F0; color: #A83030; }
+  .badge-radius { background: var(--gray-100); color: var(--gray-700); }
+  .comp-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .comp-rating {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    white-space: nowrap;
+  }
+  .comp-rating-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 400;
+  }
+
+  /* INSTAGRAM SECTION */
+  .insta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 680px) { .insta-grid { grid-template-columns: 1fr; } }
+  .insta-screenshot {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .insta-screenshot img {
+    width: 100%;
+    display: block;
+  }
+  .insta-points { display: flex; flex-direction: column; gap: 16px; }
+  .insta-point {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .insta-point-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--black);
+  }
+  .insta-point-body {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* OBSERVATION CARDS */
+  .obs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 640px) { .obs-grid { grid-template-columns: 1fr; } }
+  .obs-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .obs-card.full { grid-column: 1 / -1; }
+  .obs-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .obs-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .obs-body {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.65;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--red);
+    padding: 80px 48px;
+    border-bottom: none;
+  }
+  .cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+  .cta-headline {
+    font-size: clamp(26px, 4.5vw, 42px);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    line-height: 1.12;
+  }
+  .cta-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 38px;
+    line-height: 1.65;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 16px 44px;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    padding: 24px 48px;
+  }
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-text { font-size: 13px; color: var(--gray-500); }
+  .footer-text a { color: var(--gray-500); text-decoration: none; }
+  .footer-text a:hover { color: var(--red); }
+
+  @media (max-width: 600px) {
+    .topbar { padding: 0 20px; }
+    .hero { padding: 60px 20px; }
+    .section { padding: 56px 20px; }
+    .cta-section { padding: 60px 20px; }
+    .footer { padding: 20px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-headline { animation: fadeUp 0.55s ease both; }
+  .hero-sub      { animation: fadeUp 0.55s 0.12s ease both; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-logo">
+    <img src="logo-foodie-2026-acostado.png" alt="Foodie Restaurant Growth Marketing">
+    <div class="topbar-divider"></div>
+    <span class="topbar-client">Murano by Ferraro</span>
+  </div>
+  <span class="topbar-label">Pre-Call Research</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">
+      Pablo, before we talked,<br>we looked at <em>Murano</em><br>from the outside.
+    </h1>
+    <p class="hero-sub">
+      Like someone planning a special dinner in Hallandale Beach. This is what we found.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION: THE CORRIDOR -->
+<section class="section section-white">
+  <div class="section-inner">
+    <p class="section-label">The competition</p>
+    <h2 class="section-title">Who shows up when someone looks for a great dinner in this area</h2>
+
+    <div class="comp-list">
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://maps.app.goo.gl/3i8L8xT6esypNgJF9" target="_blank">Casa D'Angelo</a>
+          <span class="comp-badge badge-radius">Decision radius</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.6</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://maps.app.goo.gl/W4aDmPz7qvi11PYG" target="_blank">Etaru</a>
+          <span class="comp-badge badge-direct">Direct corridor</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.1</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://share.google/1EfaIATnRiaGq1vln" target="_blank">The Amalfi Llama</a>
+          <span class="comp-badge badge-radius">Decision radius</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.4</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://share.google/W0T8HA8nGL7i8NJeA" target="_blank">Mia Oceanfront</a>
+          <span class="comp-badge badge-direct">Direct corridor</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.5</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://maps.app.goo.gl/PVeJMsWJkSE3Har18" target="_blank">Texas de Brazil</a>
+          <span class="comp-badge badge-direct">Direct corridor</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.3</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://maps.app.goo.gl/j22a9q4UxVYVgAmH9" target="_blank">Dr. Limon</a>
+          <span class="comp-badge badge-direct">Direct corridor</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.5</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-left">
+          <a class="comp-name" href="https://maps.app.goo.gl/p8C4o3QP7KgT8ysS7" target="_blank">The Wagyu House</a>
+          <span class="comp-badge badge-direct">Same building</span>
+        </div>
+        <div class="comp-right">
+          <span class="comp-rating-label">Google</span>
+          <span class="comp-rating">4.6</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="insight">
+      This is a partial list. When someone in Hallandale or Aventura searches for a great dinner tonight, these names come up with hundreds or thousands of reviews behind them. <em>Murano has the quality and the story. It doesn't yet have the digital presence that makes someone choose it over the place they already know.</em>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: INSTAGRAM -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">What we saw on Instagram</p>
+    <h2 class="section-title">A perfect feed that isn't selling</h2>
+
+    <div class="insta-grid">
+      <div class="insta-screenshot">
+        <img src="murano-insta.png" alt="Murano by Ferraro Instagram feed">
+      </div>
+      <div class="insta-points">
+        <div class="insta-point">
+          <div class="insta-point-title">The photography is excellent</div>
+          <div class="insta-point-body">Every frame is well-lit, well-composed, and looks like fine dining. It tells people the food is serious. That's real value for someone who already found the profile.</div>
+        </div>
+        <div class="insta-point">
+          <div class="insta-point-title">But it doesn't humanize the place</div>
+          <div class="insta-point-body">No chef. No team. No moment. No one behind the food. Chef Ferraro is the story here, and he's invisible on the feed. Fine dining sells on trust, and trust comes from people, not plates.</div>
+        </div>
+        <div class="insta-point">
+          <div class="insta-point-title">Organic reach: 2 to 4% of followers</div>
+          <div class="insta-point-body">11K followers sounds strong. In practice, a post reaches 220 to 440 people, most of whom already know Murano exists. Instagram at this stage keeps you present for people already considering you. It doesn't bring in new ones.</div>
+        </div>
+        <div class="insta-point">
+          <div class="insta-point-title">Content without paid media stays in a closed loop</div>
+          <div class="insta-point-body">The missing piece isn't better content. It's connecting that content to a paid media system that takes it to people who don't follow the account yet, in the right radius, at the right moment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: WHAT WE SEE -->
+<section class="section section-white">
+  <div class="section-inner">
+    <p class="section-label">What we see</p>
+    <h2 class="section-title">Three things worth talking about</h2>
+
+    <div class="obs-grid">
+
+      <div class="obs-card">
+        <div class="obs-num">01</div>
+        <div class="obs-title">Google presence doesn't match the quality</div>
+        <div class="obs-body">The restaurant has earned real press. Global Miami Magazine, Sun-Sentinel. The physical experience is clearly there. But on Google, the review volume is thin for a six-month-old restaurant at this level. That's the first thing a new customer checks before making a reservation, and it's a gap that's easy to close with the right system.</div>
+      </div>
+
+      <div class="obs-card">
+        <div class="obs-num">02</div>
+        <div class="obs-title">Visibility is a gap, not a quality problem</div>
+        <div class="obs-body">When someone searches "Italian restaurant Hallandale Beach" or "special occasion dinner near me," the results are dominated by restaurants with years of reviews behind them. That's not a reflection of food quality. It's a reflection of time in market and paid presence. Both are closable.</div>
+      </div>
+
+      <div class="obs-card full">
+        <div class="obs-num">03</div>
+        <div class="obs-title">Every empty table has a fixed cost running behind it</div>
+        <div class="obs-body">Rent, kitchen brigade, front of house: those costs run the same whether the room is full or half-full. At a $75+ average check, one additional table filled on a Tuesday or Wednesday isn't just revenue. It's near-pure margin. The cost of not being found isn't the marketing budget. It's the covers that didn't happen.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-headline">30 minutes is enough to know if there's a fit.</h2>
+    <p class="cta-sub">No pitch. We talk through what you're seeing, what you want to fix, and whether we're the right team to help.</p>
+    <a href="https://calendly.com/foodieagency/strategy-call-foodie" target="_blank" class="cta-btn">Book a strategy call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-text">© 2026 Foodie Restaurant Growth Marketing</span>
+    <span class="footer-text"><a href="https://foodie.agency" target="_blank">foodie.agency</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
