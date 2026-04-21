@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paseo San Miguel — Brand Snapshot Fase 2 · Foodie Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600;700&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0D0D0D;
+  --red: #E8473F;
+  --white: #FFFFFF;
+  --gray-light: #F2F2F2;
+  --gray-mid: #E0E0E0;
+  --gray-dark: #666666;
+  --yellow: #F5A623;
+  --green: #2ECC71;
+  --font-title: 'Signika Negative', sans-serif;
+  --font-body: 'Urbanist', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--gray-light);
+  color: var(--black);
+  min-height: 100vh;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── TOPBAR ── */
+.topbar { background: var(--white); border-bottom: 3px solid var(--red); width: 100%; }
+.topbar-inner {
+  max-width: 960px; margin: 0 auto; padding: 14px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.topbar-brand {
+  font-family: var(--font-title);
+  font-size: 18px;
+  color: var(--black);
+  letter-spacing: -0.3px;
+}
+.topbar-brand span { color: var(--red); }
+.topbar-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--gray-dark);
+}
+
+/* ── HERO ── */
+.hero { background: var(--black); width: 100%; }
+.hero-inner { max-width: 960px; margin: 0 auto; padding: 48px 40px 40px; }
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 34px;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  color: var(--white);
+  line-height: 1.2;
+}
+.hero h1 span { color: var(--red); }
+.hero .subtitle {
+  font-size: 15px;
+  color: #AAAAAA;
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.7;
+}
+.hero-meta {
+  display: flex; gap: 32px; margin-top: 28px;
+  border-top: 1px solid #222;
+  padding-top: 24px;
+}
+.hero-stat { }
+.hero-stat .val {
+  font-family: var(--font-title);
+  font-size: 26px;
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1;
+}
+.hero-stat .val span { color: var(--red); }
+.hero-stat .lbl {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ── ALERT BANNER ── */
+.alert-banner { background: var(--red); width: 100%; }
+.alert-inner {
+  max-width: 960px; margin: 0 auto; padding: 14px 40px;
+  display: flex; align-items: center; gap: 12px;
+}
+.alert-icon { font-size: 18px; }
+.alert-text { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.5; }
+.alert-text strong { font-weight: 700; }
+
+/* ── MAIN CONTAINER ── */
+.main { max-width: 960px; margin: 0 auto; padding: 40px 40px 20px; }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 24px; margin-top: 48px;
+  border-bottom: 2px solid var(--gray-mid);
+  padding-bottom: 12px;
+}
+.section-header:first-child { margin-top: 0; }
+.section-number {
+  font-family: var(--font-title);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+}
+.section-title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── KPI GRID ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 0;
+}
+.kpi-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-top: 3px solid var(--gray-mid);
+}
+.kpi-card.highlight { border-top-color: var(--red); }
+.kpi-card.ok { border-top-color: var(--green); }
+.kpi-card.warn { border-top-color: var(--yellow); }
+.kpi-val {
+  font-family: var(--font-title);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.kpi-val.red { color: var(--red); }
+.kpi-val.green { color: var(--green); }
+.kpi-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-dark);
+  margin-bottom: 8px;
+}
+.kpi-note {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* ── LOCATIONS GRID ── */
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.loc-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--gray-mid);
+}
+.loc-card.crisis { border-left-color: var(--red); }
+.loc-card.best { border-left-color: var(--green); }
+.loc-card.new-loc { border-left-color: var(--yellow); }
+.loc-card.normal { border-left-color: #BBBBBB; }
+
+.loc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.loc-name {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+}
+.loc-address { font-size: 12px; color: var(--gray-dark); margin-top: 2px; }
+.loc-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.badge-crisis { background: #FFF0EF; color: var(--red); }
+.badge-best { background: #EDFAF3; color: #1A9950; }
+.badge-new { background: #FFF8EC; color: #B8761A; }
+.badge-normal { background: var(--gray-light); color: var(--gray-dark); }
+
+.loc-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+.ls-item .ls-val {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+}
+.ls-item .ls-lbl { font-size: 11px; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+/* Rating bar chart */
+.rating-bars { }
+.rating-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 7px;
+}
+.rating-row .stars { font-size: 11px; color: var(--gray-dark); width: 24px; text-align: right; flex-shrink: 0; }
+.rating-row .bar-track {
+  flex: 1; height: 8px; background: var(--gray-light);
+  border-radius: 4px; overflow: hidden;
+}
+.rating-row .bar-fill {
+  height: 100%; border-radius: 4px;
+  background: var(--gray-mid);
+  transition: width 0.6s ease;
+}
+.bar-fill.five { background: #2ECC71; }
+.bar-fill.four { background: #82D47A; }
+.bar-fill.three { background: var(--yellow); }
+.bar-fill.two { background: #F08030; }
+.bar-fill.one { background: var(--red); }
+.rating-row .pct { font-size: 11px; font-weight: 600; color: var(--gray-dark); width: 30px; text-align: right; flex-shrink: 0; }
+
+.loc-alert {
+  margin-top: 14px;
+  background: #FFF8F8;
+  border-left: 3px solid var(--red);
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+.loc-note {
+  margin-top: 14px;
+  background: var(--gray-light);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ── TREND CHART ── */
+.trend-wrap {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+.trend-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.trend-sub { font-size: 12px; color: var(--gray-dark); margin-bottom: 20px; }
+.chart-container { position: relative; width: 100%; }
+svg.trend-svg { width: 100%; height: 180px; overflow: visible; }
+
+/* ── TOPICS CHART ── */
+.topics-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+.topic-row {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 14px;
+}
+.topic-name { font-size: 13px; font-weight: 600; color: var(--black); width: 160px; flex-shrink: 0; }
+.topic-track { flex: 1; height: 12px; background: var(--gray-light); border-radius: 6px; overflow: hidden; }
+.topic-fill { height: 100%; border-radius: 6px; background: var(--black); }
+.topic-pct { font-size: 13px; font-weight: 700; color: var(--black); width: 44px; text-align: right; }
+.topic-n { font-size: 11px; color: var(--gray-dark); width: 40px; text-align: right; }
+
+/* ── DISHES CHART ── */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.dish-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.dish-card.top { border-top: 3px solid var(--red); }
+.dish-num {
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+.dish-card.top .dish-num { color: var(--red); }
+.dish-name { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray-dark); margin-top: 6px; }
+.dish-bar { height: 3px; background: var(--gray-light); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+.dish-bar-fill { height: 100%; border-radius: 2px; background: var(--red); }
+
+/* ── QUALITATIVE ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.qual-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.qual-card h3 {
+  font-family: var(--font-title);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.qual-card.positive h3 { color: #1A9950; }
+.qual-card.negative h3 { color: var(--red); }
+.qual-item {
+  display: flex; gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+.qual-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.qual-card.positive .qual-dot { background: var(--green); }
+.qual-card.negative .qual-dot { background: var(--red); }
+
+/* ── QUOTES ── */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.quote-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
+}
+.quote-card::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 60px;
+  color: var(--gray-mid);
+  position: absolute;
+  top: 8px; left: 16px;
+  line-height: 1;
+}
+.quote-text {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.65;
+  padding-top: 16px;
+  font-style: italic;
+}
+.quote-card.pos { border-left: 3px solid var(--green); }
+.quote-card.neg { border-left: 3px solid var(--red); }
+
+/* ── OWNER RESPONSE ── */
+.response-card {
+  background: var(--black);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.resp-left {}
+.resp-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--red); margin-bottom: 10px;
+}
+.resp-headline {
+  font-family: var(--font-title);
+  font-size: 22px;
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.resp-body { font-size: 13px; color: #AAAAAA; line-height: 1.7; }
+.resp-body strong { color: var(--white); }
+.resp-right {}
+.resp-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+}
+.resp-row:last-child { border-bottom: none; }
+.resp-loc { font-size: 13px; color: #CCC; font-weight: 500; }
+.resp-rate-wrap { display: flex; align-items: center; gap: 10px; }
+.resp-bar-track { width: 80px; height: 6px; background: #333; border-radius: 3px; overflow: hidden; }
+.resp-bar-fill { height: 100%; border-radius: 3px; background: var(--red); }
+.resp-rate {
+  font-size: 12px; font-weight: 700;
+  color: var(--white);
+  width: 38px; text-align: right;
+}
+.resp-rate.red { color: var(--red); }
+
+/* ── PRIORITIES ── */
+.priorities-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+.priority-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.priority-number {
+  font-family: var(--font-title);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 2px;
+}
+.p1 .priority-number { color: var(--red); }
+.p2 .priority-number { color: #E06030; }
+.p3 .priority-number { color: var(--yellow); }
+.p4 .priority-number { color: #2ECC71; }
+.p5 .priority-number { color: #3B9BDF; }
+.priority-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  padding: 3px 8px; border-radius: 20px;
+  margin-bottom: 8px;
+}
+.p1 .priority-tag { background: #FFF0EF; color: var(--red); }
+.p2 .priority-tag { background: #FFF3EC; color: #C04A1A; }
+.p3 .priority-tag { background: #FFF9EC; color: #B8761A; }
+.p4 .priority-tag { background: #EDF9F1; color: #1A7A40; }
+.p5 .priority-tag { background: #EEF5FF; color: #1E5FAA; }
+.priority-title {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.priority-body { font-size: 13px; color: #555; line-height: 1.65; }
+
+/* ── COMPARISON TABLE ── */
+.table-wrap {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+table { width: 100%; border-collapse: collapse; }
+thead tr { background: var(--black); }
+thead th {
+  font-family: var(--font-title);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #AAA;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+}
+thead th:first-child { color: var(--white); }
+tbody tr { border-bottom: 1px solid var(--gray-light); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:nth-child(even) { background: #FAFAFA; }
+tbody td { padding: 14px 18px; font-size: 13px; color: var(--black); }
+tbody td.loc-cell { font-weight: 700; }
+.cell-alert { font-size: 11px; font-weight: 600; }
+.cell-alert.red { color: var(--red); }
+.cell-alert.yellow { color: #C07A10; }
+.total-row { background: var(--black) !important; }
+.total-row td { color: var(--white) !important; font-weight: 700 !important; font-size: 13px; }
+
+/* ── METHODS ── */
+.methods-card {
+  background: #1A1A1A;
+  border-left: 4px solid var(--red);
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin-bottom: 40px;
+}
+.methods-card h3 {
+  font-family: var(--font-title);
+  font-size: 11px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.methods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.method-item .m-lbl { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 4px; }
+.method-item .m-val { font-size: 13px; color: #DDD; line-height: 1.5; }
+
+/* ── FOOTER ── */
+.footer { background: var(--black); border-top: 3px solid var(--red); width: 100%; margin-top: 40px; }
+.footer-inner {
+  max-width: 960px; margin: 0 auto; padding: 24px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-text { font-size: 12px; color: #888; line-height: 1.6; }
+.footer-brand { font-size: 13px; font-weight: 600; color: #CCC; }
+.footer-brand span { color: var(--red); }
+
+/* ── PRINT ── */
+@media print {
+  .main { padding: 20px; }
+  .hero-inner, .topbar-inner, .alert-inner { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ── BILINGUAL NOTE ── */
+.bilingual-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+.bilingual-badge .flag { font-size: 18px; }
+.bilingual-badge .btext { font-size: 13px; color: #555; }
+.bilingual-badge .btext strong { color: var(--black); }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">foodie<span>.</span>agency</div>
+    <div class="topbar-tag">Restaurant Growth Marketing</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Brand Snapshot · Fase 2 · Abril 2026</div>
+    <h1>Paseo San Miguel —<br/>Diagnóstico de <span>Reputación Digital</span></h1>
+    <p class="subtitle">Análisis de 1,039 reseñas de Google · 5 locaciones · Los Ángeles, CA · Datos hasta abril 2026</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="val">6,459</div>
+        <div class="lbl">Reseñas en Google</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">4.36 <span>★</span></div>
+        <div class="lbl">Rating promedio de marca</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">73%</div>
+        <div class="lbl">5 estrellas (muestra)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val" style="color:var(--red);">0.4%</div>
+        <div class="lbl">Respuestas del dueño</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">5</div>
+        <div class="lbl">Locaciones activas</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  <div class="alert-inner">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-text">
+      <strong>ALERTA CRÍTICA:</strong> Solo 4 respuestas del dueño en 1,039 reseñas (0.4%). El estándar de industria es 50–70% en reseñas negativas. La marca aparece públicamente indiferente al feedback de sus clientes.
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── SECCIÓN 1: MÉTRICAS GLOBALES ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 01</div>
+    <div class="section-title">Métricas Globales de Marca</div>
+  </div>
+
+  <div class="kpi-grid" style="margin-bottom:20px;">
+    <div class="kpi-card ok">
+      <div class="kpi-lbl">Rating Promedio</div>
+      <div class="kpi-val">4.36 ★</div>
+      <div class="kpi-note">Rango entre locaciones: 4.3 – 4.4 ★</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-lbl">Total Reseñas Google</div>
+      <div class="kpi-val">6,459</div>
+      <div class="kpi-note">Acumulado histórico en 5 locaciones</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-lbl">Muestra Analizada</div>
+      <div class="kpi-val">1,039</div>
+      <div class="kpi-note">515 con texto (49%) · Análisis cualitativo</div>
+    </div>
+    <div class="kpi-card ok">
+      <div class="kpi-lbl">% de 5 estrellas</div>
+      <div class="kpi-val green">73%</div>
+      <div class="kpi-note">734 de 1,039 reseñas en la muestra</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-lbl">Menciones de Comida/Sabor</div>
+      <div class="kpi-val">72%</div>
+      <div class="kpi-note">Del total de reseñas con texto</div>
+    </div>
+    <div class="kpi-card highlight">
+      <div class="kpi-lbl">Respuestas del Dueño</div>
+      <div class="kpi-val red">0.4%</div>
+      <div class="kpi-note">4 de 1,039 reseñas · BRECHA CRÍTICA</div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 2: LOCACIONES ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 02</div>
+    <div class="section-title">Resumen por Locación</div>
+  </div>
+
+  <div class="locations-grid" style="margin-bottom:20px;">
+
+    <!-- MLK -->
+    <div class="loc-card normal">
+      <div class="loc-header">
+        <div>
+          <div class="loc-name">MLK</div>
+          <div class="loc-address">1560 W Martin Luther King Jr Blvd</div>
+        </div>
+        <div class="loc-badge badge-normal">Flagship</div>
+      </div>
+      <div class="loc-stats">
+        <div class="ls-item"><div class="ls-val">2,777</div><div class="ls-lbl">Reviews</div></div>
+        <div class="ls-item"><div class="ls-val">4.3 ★</div><div class="ls-lbl">Rating</div></div>
+        <div class="ls-item"><div class="ls-val">4.40</div><div class="ls-lbl">Muestra avg</div></div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-row"><span class="stars">5★</span><div class="bar-track"><div class="bar-fill five" style="width:70%"></div></div><span class="pct">70%</span></div>
+        <div class="rating-row"><span class="stars">4★</span><div class="bar-track"><div class="bar-fill four" style="width:14%"></div></div><span class="pct">14%</span></div>
+        <div class="rating-row"><span class="stars">3★</span><div class="bar-track"><div class="bar-fill three" style="width:7%"></div></div><span class="pct">7%</span></div>
+        <div class="rating-row"><span class="stars">2★</span><div class="bar-track"><div class="bar-fill two" style="width:2%"></div></div><span class="pct">2%</span></div>
+        <div class="rating-row"><span class="stars">1★</span><div class="bar-track"><div class="bar-fill one" style="width:6%"></div></div><span class="pct">6%</span></div>
+      </div>
+      <div class="loc-note">Mayor volumen de la red (43%). Quejas recurrentes: precios subieron, porciones reducidas, baño con problemas.</div>
+    </div>
+
+    <!-- WESTERN -->
+    <div class="loc-card crisis">
+      <div class="loc-header">
+        <div>
+          <div class="loc-name">Western</div>
+          <div class="loc-address">3874 S Western Ave</div>
+        </div>
+        <div class="loc-badge badge-crisis">⚠ Crisis</div>
+      </div>
+      <div class="loc-stats">
+        <div class="ls-item"><div class="ls-val">1,154</div><div class="ls-lbl">Reviews</div></div>
+        <div class="ls-item"><div class="ls-val">4.3 ★</div><div class="ls-lbl">Rating</div></div>
+        <div class="ls-item"><div class="ls-val" style="color:var(--red)">4.23</div><div class="ls-lbl">Muestra avg ↓</div></div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-row"><span class="stars">5★</span><div class="bar-track"><div class="bar-fill five" style="width:68%"></div></div><span class="pct">68%</span></div>
+        <div class="rating-row"><span class="stars">4★</span><div class="bar-track"><div class="bar-fill four" style="width:12%"></div></div><span class="pct">12%</span></div>
+        <div class="rating-row"><span class="stars">3★</span><div class="bar-track"><div class="bar-fill three" style="width:6%"></div></div><span class="pct">6%</span></div>
+        <div class="rating-row"><span class="stars">2★</span><div class="bar-track"><div class="bar-fill two" style="width:2%"></div></div><span class="pct">2%</span></div>
+        <div class="rating-row"><span class="stars">1★</span><div class="bar-track"><div class="bar-fill one" style="width:11%"></div></div><span class="pct" style="color:var(--red);font-weight:800">11%</span></div>
+      </div>
+      <div class="loc-alert">Caída documentada a <strong>2.3★</strong> en diciembre 2025. Clientes con 5+ años reportan deterioro de sabor. Personal reportado como desatento.</div>
+    </div>
+
+    <!-- BROADWAY -->
+    <div class="loc-card new-loc">
+      <div class="loc-header">
+        <div>
+          <div class="loc-name">Broadway</div>
+          <div class="loc-address">4088 S Broadway, Los Ángeles</div>
+        </div>
+        <div class="loc-badge badge-new">Nueva</div>
+      </div>
+      <div class="loc-stats">
+        <div class="ls-item"><div class="ls-val">39</div><div class="ls-lbl">Reviews</div></div>
+        <div class="ls-item"><div class="ls-val">4.4 ★</div><div class="ls-lbl">Rating</div></div>
+        <div class="ls-item"><div class="ls-val">4.44</div><div class="ls-lbl">Muestra avg</div></div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-row"><span class="stars">5★</span><div class="bar-track"><div class="bar-fill five" style="width:77%"></div></div><span class="pct">77%</span></div>
+        <div class="rating-row"><span class="stars">4★</span><div class="bar-track"><div class="bar-fill four" style="width:10%"></div></div><span class="pct">10%</span></div>
+        <div class="rating-row"><span class="stars">3★</span><div class="bar-track"><div class="bar-fill three" style="width:3%"></div></div><span class="pct">3%</span></div>
+        <div class="rating-row"><span class="stars">2★</span><div class="bar-track"><div class="bar-fill two" style="width:0%"></div></div><span class="pct">0%</span></div>
+        <div class="rating-row"><span class="stars">1★</span><div class="bar-track"><div class="bar-fill one" style="width:10%"></div></div><span class="pct">10%</span></div>
+      </div>
+      <div class="loc-note">Abierta junio 2025. Críticas elaboradas piden manager visible. Café reportado como aguado. Ventana aún moldeable.</div>
+    </div>
+
+    <!-- ROSEMEAD -->
+    <div class="loc-card best">
+      <div class="loc-header">
+        <div>
+          <div class="loc-name">Rosemead</div>
+          <div class="loc-address">4623 Rosemead Blvd, Pico Rivera</div>
+        </div>
+        <div class="loc-badge badge-best">Top Satisfacción</div>
+      </div>
+      <div class="loc-stats">
+        <div class="ls-item"><div class="ls-val">995</div><div class="ls-lbl">Reviews</div></div>
+        <div class="ls-item"><div class="ls-val">4.4 ★</div><div class="ls-lbl">Rating</div></div>
+        <div class="ls-item"><div class="ls-val" style="color:#1A9950">4.48</div><div class="ls-lbl">Muestra avg ↑</div></div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-row"><span class="stars">5★</span><div class="bar-track"><div class="bar-fill five" style="width:78%"></div></div><span class="pct" style="color:#1A9950;font-weight:800">78%</span></div>
+        <div class="rating-row"><span class="stars">4★</span><div class="bar-track"><div class="bar-fill four" style="width:8%"></div></div><span class="pct">8%</span></div>
+        <div class="rating-row"><span class="stars">3★</span><div class="bar-track"><div class="bar-fill three" style="width:6%"></div></div><span class="pct">6%</span></div>
+        <div class="rating-row"><span class="stars">2★</span><div class="bar-track"><div class="bar-fill two" style="width:1%"></div></div><span class="pct">1%</span></div>
+        <div class="rating-row"><span class="stars">1★</span><div class="bar-track"><div class="bar-fill one" style="width:7%"></div></div><span class="pct">7%</span></div>
+      </div>
+      <div class="loc-note">Mayor % de 5★ en la red. Principal problema: cobros incorrectos en caja y respuestas defensivas del personal al reclamar.</div>
+    </div>
+
+    <!-- VERMONT -->
+    <div class="loc-card normal" style="grid-column: 1 / -1;">
+      <div class="loc-header">
+        <div>
+          <div class="loc-name">Vermont</div>
+          <div class="loc-address">6051 Vermont Ave</div>
+        </div>
+        <div class="loc-badge badge-normal">Más activa en respuestas</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+        <div>
+          <div class="loc-stats">
+            <div class="ls-item"><div class="ls-val">1,494</div><div class="ls-lbl">Reviews</div></div>
+            <div class="ls-item"><div class="ls-val">4.4 ★</div><div class="ls-lbl">Rating</div></div>
+            <div class="ls-item"><div class="ls-val">4.38</div><div class="ls-lbl">Muestra avg</div></div>
+          </div>
+          <div class="rating-bars">
+            <div class="rating-row"><span class="stars">5★</span><div class="bar-track"><div class="bar-fill five" style="width:66%"></div></div><span class="pct">66%</span></div>
+            <div class="rating-row"><span class="stars">4★</span><div class="bar-track"><div class="bar-fill four" style="width:20%"></div></div><span class="pct" style="color:#555;font-weight:700">20%</span></div>
+            <div class="rating-row"><span class="stars">3★</span><div class="bar-track"><div class="bar-fill three" style="width:6%"></div></div><span class="pct">6%</span></div>
+            <div class="rating-row"><span class="stars">2★</span><div class="bar-track"><div class="bar-fill two" style="width:2%"></div></div><span class="pct">2%</span></div>
+            <div class="rating-row"><span class="stars">1★</span><div class="bar-track"><div class="bar-fill one" style="width:6%"></div></div><span class="pct">6%</span></div>
+          </div>
+          <div class="loc-note" style="margin-top:14px;">Mayor proporción de 4★ en la red (20%). 3 respuestas del dueño en la muestra. Quejas sobre pedidos para llevar incompletos.</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--gray-dark);margin-bottom:12px;">Tendencia mensual 2025–2026</div>
+          <canvas id="vermontChart" width="400" height="160" style="width:100%;height:auto;"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Western Trend -->
+  <div class="trend-wrap" style="margin-bottom:20px;">
+    <div class="trend-title">Western Ave — Tendencia mensual 2025–2026</div>
+    <div class="trend-sub">Rating promedio mensual · Caída crítica Q4 2025</div>
+    <canvas id="westernChart" width="800" height="160" style="width:100%;height:auto;"></canvas>
+  </div>
+
+  <!-- ── SECCIÓN 3: TEMAS ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 03</div>
+    <div class="section-title">Temas Más Mencionados</div>
+  </div>
+
+  <div class="topics-card" style="margin-bottom:20px;">
+    <div style="font-size:12px;color:var(--gray-dark);margin-bottom:20px;">Base: 515 reseñas con texto · todas las locaciones</div>
+    <div class="topic-row">
+      <div class="topic-name">🍽️ Comida / Sabor</div>
+      <div class="topic-track"><div class="topic-fill" style="width:72.2%;background:#0D0D0D;"></div></div>
+      <div class="topic-pct">72.2%</div>
+      <div class="topic-n">372</div>
+    </div>
+    <div class="topic-row">
+      <div class="topic-name">🤝 Servicio</div>
+      <div class="topic-track"><div class="topic-fill" style="width:40.6%;background:#E8473F;"></div></div>
+      <div class="topic-pct">40.6%</div>
+      <div class="topic-n">209</div>
+    </div>
+    <div class="topic-row">
+      <div class="topic-name">✨ Ambiente / Limpieza</div>
+      <div class="topic-track"><div class="topic-fill" style="width:18.4%;background:#555;"></div></div>
+      <div class="topic-pct">18.4%</div>
+      <div class="topic-n">95</div>
+    </div>
+    <div class="topic-row">
+      <div class="topic-name">💰 Precios</div>
+      <div class="topic-track"><div class="topic-fill" style="width:11.5%;background:#888;"></div></div>
+      <div class="topic-pct">11.5%</div>
+      <div class="topic-n">59</div>
+    </div>
+    <div class="topic-row">
+      <div class="topic-name">⏱️ Espera / Velocidad</div>
+      <div class="topic-track"><div class="topic-fill" style="width:9.9%;background:#AAA;"></div></div>
+      <div class="topic-pct">9.9%</div>
+      <div class="topic-n">51</div>
+    </div>
+    <div class="topic-row" style="margin-bottom:0">
+      <div class="topic-name">🍽️ Porciones</div>
+      <div class="topic-track"><div class="topic-fill" style="width:8.3%;background:#CCC;"></div></div>
+      <div class="topic-pct">8.3%</div>
+      <div class="topic-n">43</div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 4: PLATOS ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 04</div>
+    <div class="section-title">Platos con Mayor Recall Espontáneo</div>
+  </div>
+
+  <div style="font-size:12px;color:var(--gray-dark);margin-bottom:16px;">Menciones orgánicas en texto libre · todas las locaciones</div>
+
+  <div class="dishes-grid" style="margin-bottom:20px;">
+    <div class="dish-card top">
+      <div class="dish-num">101</div>
+      <div class="dish-name">Pupusas</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:100%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">29</div>
+      <div class="dish-name">Sopa</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:28.7%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">15</div>
+      <div class="dish-name">Pollo</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:14.8%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">9</div>
+      <div class="dish-name">Tamal</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:8.9%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">8</div>
+      <div class="dish-name">Horchata</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:7.9%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">4</div>
+      <div class="dish-name">Yuca</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:3.9%"></div></div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-num">3</div>
+      <div class="dish-name">Carne Asada</div>
+      <div class="dish-bar"><div class="dish-bar-fill" style="width:2.9%"></div></div>
+    </div>
+    <div class="dish-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--gray-light);box-shadow:none;">
+      <div style="font-size:11px;color:var(--gray-dark);text-align:center;line-height:1.6;">Las pupusas tienen <strong>más del triple</strong> de menciones que el segundo plato más recordado.</div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 5: CUALITATIVO ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 05</div>
+    <div class="section-title">Análisis Cualitativo: Voz del Cliente</div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:16px;">
+    <div class="qual-card positive">
+      <h3>✓ Fortalezas Percibidas</h3>
+      <div class="qual-item"><div class="qual-dot"></div><div>Comida auténtica y sabrosa: el producto es el principal driver de lealtad</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Pupusas: producto más recordado y recomendado</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Sopa de mariscos / mariscada: plato de alta fidelización</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Ambiente limpio y bonito en la mayoría de locaciones</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Personal amable en casos específicos (mencionado por nombre)</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Panecito de manja con chocolate caliente: experiencia nocturna memorable</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Clientes que regresan de forma habitual por años</div></div>
+    </div>
+    <div class="qual-card negative">
+      <h3>✗ Fricciones Recurrentes</h3>
+      <div class="qual-item"><div class="qual-dot"></div><div>Servicio lento, indiferente o de "mal genio"</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Personal distraído o flirteando (Western Ave)</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Precios percibidos como altos en relación a las porciones</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Inconsistencia en calidad: mismo plato varía entre visitas</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Cobros incorrectos: cajeras cobran de más (Rosemead)</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Falta de liderazgo visible en locaciones nuevas (Broadway)</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div>Pedidos para llevar con contenido incompleto</div></div>
+    </div>
+  </div>
+
+  <div style="font-family:var(--font-title);font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray-dark);margin-bottom:14px;">Citas Representativas</div>
+  <div class="quotes-grid" style="margin-bottom:0;">
+    <div class="quote-card pos">
+      <div class="quote-text">Their mariscada is sooo good. My family drives an hour to eat at this place.</div>
+    </div>
+    <div class="quote-card neg">
+      <div class="quote-text">Food is not the same, less portions. Staff are just flirting with customers, that's why we're not getting any customer service.</div>
+    </div>
+    <div class="quote-card pos">
+      <div class="quote-text">If you're coming in late, don't miss out on a panecito de manja with a homemade hot chocolate… it's the perfect combo to end the night.</div>
+    </div>
+    <div class="quote-card neg">
+      <div class="quote-text">Llevo 5 años viviendo en la zona. En el 2019 qué delicia, con el tiempo pierden el sabor de la comida.</div>
+    </div>
+    <div class="quote-card pos">
+      <div class="quote-text">Johana y Alan fueron las personas que nos atendieron y qué lindas personas, muy educados.</div>
+    </div>
+    <div class="quote-card neg">
+      <div class="quote-text">Creo que necesitan un buen líder o manager ya que el lugar es nuevo y la impresión es lo que cuenta.</div>
+    </div>
+    <div class="quote-card pos">
+      <div class="quote-text">Absolutely amazing food! The sopa de mariscos is packed with flavor and seriously hits the spot.</div>
+    </div>
+    <div class="quote-card neg">
+      <div class="quote-text">They raised their prices and they give such a little of food. Ridiculous.</div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 6: OWNER RESPONSE ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 06</div>
+    <div class="section-title">Respuesta del Dueño</div>
+  </div>
+
+  <div class="response-card" style="margin-bottom:20px;">
+    <div class="resp-left">
+      <div class="resp-eyebrow">Brecha Operativa #1</div>
+      <div class="resp-headline">La red opera al<br/>0.4% de respuesta</div>
+      <div class="resp-body">
+        El estándar mínimo de industria es <strong>50–70%</strong> en reseñas negativas y <strong>20–30%</strong> en positivas.<br/><br/>
+        Responder al 100% de reseñas de 1–2 estrellas dentro de <strong>48 horas</strong> es la acción de mayor impacto posible sin inversión adicional. Una respuesta pública también opera como señal para futuros clientes.
+      </div>
+    </div>
+    <div class="resp-right">
+      <div class="resp-row">
+        <div class="resp-loc">MLK</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track"><div class="resp-bar-fill" style="width:0%"></div></div>
+          <div class="resp-rate red">0.0%</div>
+        </div>
+      </div>
+      <div class="resp-row">
+        <div class="resp-loc">Western</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track"><div class="resp-bar-fill" style="width:0%"></div></div>
+          <div class="resp-rate red">0.0%</div>
+        </div>
+      </div>
+      <div class="resp-row">
+        <div class="resp-loc">Broadway</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track"><div class="resp-bar-fill" style="width:0%"></div></div>
+          <div class="resp-rate red">0.0%</div>
+        </div>
+      </div>
+      <div class="resp-row">
+        <div class="resp-loc">Rosemead</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track"><div class="resp-bar-fill" style="width:1%"></div></div>
+          <div class="resp-rate red">0.4%</div>
+        </div>
+      </div>
+      <div class="resp-row">
+        <div class="resp-loc">Vermont</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track"><div class="resp-bar-fill" style="width:2%"></div></div>
+          <div class="resp-rate red">1.2%</div>
+        </div>
+      </div>
+      <div class="resp-row" style="margin-top:8px;padding-top:14px;border-top:1px solid #333;">
+        <div class="resp-loc" style="color:#fff;font-weight:700;">Total Red</div>
+        <div class="resp-rate-wrap">
+          <div class="resp-bar-track" style="background:#444;"><div class="resp-bar-fill" style="width:1%"></div></div>
+          <div class="resp-rate red" style="font-size:14px;">0.4%</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;padding:10px 0;">
+        <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Referencia industria</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="flex:1;height:6px;background:#333;border-radius:3px;overflow:hidden;">
+            <div style="width:60%;height:100%;background:#2ECC71;border-radius:3px;"></div>
+          </div>
+          <div style="font-size:12px;font-weight:700;color:#2ECC71;">50–70%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 7: PRIORIDADES ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 07</div>
+    <div class="section-title">Hallazgos Clave y Prioridades de Acción</div>
+  </div>
+
+  <div class="priorities-list" style="margin-bottom:20px;">
+    <div class="priority-card p1">
+      <div class="priority-number">1</div>
+      <div>
+        <div class="priority-tag">Crítica</div>
+        <div class="priority-title">Activar gestión de reseñas — todas las locaciones</div>
+        <div class="priority-body">Con solo 4 respuestas en 1,039 reseñas (0.4%), la marca aparece públicamente indiferente al feedback. Responder al 100% de las reseñas de 1–2 estrellas dentro de 48 horas es la acción de mayor impacto posible sin inversión adicional. Una respuesta pública también opera como señal para futuros clientes potenciales.</div>
+      </div>
+    </div>
+    <div class="priority-card p2">
+      <div class="priority-number">2</div>
+      <div>
+        <div class="priority-tag">Urgente</div>
+        <div class="priority-title">Intervención operativa en Western Ave</div>
+        <div class="priority-body">Mayor tasa de 1★ de la red (11%). Caída documentada a 2.3★ en diciembre 2025. Clientes con 5+ años reportan deterioro de sabor y personal desatento. Acción requerida: diagnóstico operativo en cocina y servicio, posiblemente cambio en equipo de sala.</div>
+      </div>
+    </div>
+    <div class="priority-card p3">
+      <div class="priority-number">3</div>
+      <div>
+        <div class="priority-tag">Acción Temprana</div>
+        <div class="priority-title">Establecer cultura de servicio en Broadway</div>
+        <div class="priority-body">Abierta desde junio 2025 con solo 39 reseñas. La crítica más elaborada pide explícitamente un manager visible. Ventana ideal para establecer estándares antes de que el volumen de reseñas consolide una percepción negativa permanente.</div>
+      </div>
+    </div>
+    <div class="priority-card p4">
+      <div class="priority-number">4</div>
+      <div>
+        <div class="priority-tag">Estratégica</div>
+        <div class="priority-title">Capitalizar las pupusas como ancla de marca</div>
+        <div class="priority-body">101 menciones espontáneas — más del triple que el segundo plato. Las pupusas son el activo más asociado orgánicamente a Paseo San Miguel. Toda estrategia de contenido para Fase 2 debería centralizar este producto como emblema visual y narrativo de la marca.</div>
+      </div>
+    </div>
+    <div class="priority-card p5">
+      <div class="priority-number">5</div>
+      <div>
+        <div class="priority-tag">Operativa</div>
+        <div class="priority-title">Revisar proceso de caja en Rosemead</div>
+        <div class="priority-body">Múltiples clientes reportan cobros incorrectos y reacciones defensivas del personal al reclamar. Problema de POS o capacitación, no de producto. Alta probabilidad de pérdida de clientes habituales por este motivo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bilingual note -->
+  <div class="bilingual-badge">
+    <div class="flag">🇪🇸🇺🇸</div>
+    <div class="btext"><strong>Audiencia bilingüe:</strong> ~60% de reseñas en español, ~40% en inglés. Las campañas de Fase 2 deben operar en ambos idiomas sin excepción.</div>
+  </div>
+
+  <!-- ── SECCIÓN 8: TABLA COMPARATIVA ── -->
+  <div class="section-header">
+    <div class="section-number">Sección 08</div>
+    <div class="section-title">Tabla Comparativa entre Locaciones</div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Locación</th>
+          <th>Reviews Google</th>
+          <th>Rating</th>
+          <th>% 5★</th>
+          <th>% 1★</th>
+          <th>Resp. Dueño</th>
+          <th>Alerta Principal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="loc-cell">MLK</td>
+          <td>2,777</td>
+          <td>4.3 ★</td>
+          <td>70%</td>
+          <td>6%</td>
+          <td>0%</td>
+          <td><span class="cell-alert yellow">Porciones / precios</span></td>
+        </tr>
+        <tr>
+          <td class="loc-cell">Western</td>
+          <td>1,154</td>
+          <td>4.3 ★</td>
+          <td>68%</td>
+          <td><strong style="color:var(--red)">11%</strong></td>
+          <td>0%</td>
+          <td><span class="cell-alert red">⚠ CALIDAD EN DECLIVE</span></td>
+        </tr>
+        <tr>
+          <td class="loc-cell">Broadway</td>
+          <td>39</td>
+          <td>4.4 ★</td>
+          <td>77%</td>
+          <td>10%</td>
+          <td>0%</td>
+          <td><span class="cell-alert yellow">Sin liderazgo visible</span></td>
+        </tr>
+        <tr>
+          <td class="loc-cell">Rosemead</td>
+          <td>995</td>
+          <td>4.4 ★</td>
+          <td><strong style="color:#1A9950">78%</strong></td>
+          <td>7%</td>
+          <td>0.4%</td>
+          <td><span class="cell-alert yellow">Cobros incorrectos</span></td>
+        </tr>
+        <tr>
+          <td class="loc-cell">Vermont</td>
+          <td>1,494</td>
+          <td>4.4 ★</td>
+          <td>66%</td>
+          <td>6%</td>
+          <td>1.2%</td>
+          <td><span class="cell-alert yellow">Pedidos para llevar</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>TOTAL RED</td>
+          <td>6,459</td>
+          <td>4.36 ★</td>
+          <td>73%</td>
+          <td>8%</td>
+          <td>0.4%</td>
+          <td style="color:#E8473F;">GESTIÓN DE RESEÑAS</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── MÉTODOS ── -->
+  <div class="methods-card">
+    <h3>Notas Metodológicas</h3>
+    <div class="methods-grid">
+      <div class="method-item">
+        <div class="m-lbl">Fuente de datos</div>
+        <div class="m-val">Google Reviews via Outscraper · Extracción Abril 2026</div>
+      </div>
+      <div class="method-item">
+        <div class="m-lbl">Muestra</div>
+        <div class="m-val">250 reseñas/loc. (top recencia) · Broadway = universo completo (39)</div>
+      </div>
+      <div class="method-item">
+        <div class="m-lbl">Total analizado</div>
+        <div class="m-val">1,039 reseñas · 515 con texto (49%)</div>
+      </div>
+      <div class="method-item">
+        <div class="m-lbl">Análisis temático</div>
+        <div class="m-val">Keyword matching en texto libre (español + inglés)</div>
+      </div>
+      <div class="method-item">
+        <div class="m-lbl">Análisis de citas</div>
+        <div class="m-val">Selección manual representativa, sin alteraciones</div>
+      </div>
+      <div class="method-item">
+        <div class="m-lbl">Idioma del corpus</div>
+        <div class="m-val">~60% español · ~40% inglés</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      Paseo San Miguel · Brand Snapshot · Fase 2 · Abril 2026<br/>
+      Generado por Foodie Restaurant Growth Marketing
+    </div>
+    <div class="footer-brand">foodie<span>.</span>agency</div>
+  </div>
+</div>
+
+<script>
+// ── WESTERN TREND CHART ──
+(function() {
+  const canvas = document.getElementById('westernChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 760;
+  const H = 160;
+  canvas.width = W;
+  canvas.height = H;
+
+  const data = [
+    {m:'Ene 25', v:4.40}, {m:'Feb 25', v:3.00}, {m:'Mar 25', v:4.00},
+    {m:'Abr 25', v:5.00}, {m:'May 25', v:4.29}, {m:'Jun 25', v:4.33},
+    {m:'Jul 25', v:5.00}, {m:'Ago 25', v:3.83}, {m:'Sep 25', v:3.80},
+    {m:'Oct 25', v:4.75}, {m:'Nov 25', v:2.71}, {m:'Dic 25', v:2.33},
+    {m:'Ene 26', v:4.17}, {m:'Feb 26', v:5.00}, {m:'Mar 26', v:3.67}
+  ];
+
+  const pad = {top: 16, right: 20, bottom: 32, left: 36};
+  const cW = W - pad.left - pad.right;
+  const cH = H - pad.top - pad.bottom;
+  const minV = 1, maxV = 5.2;
+  const xStep = cW / (data.length - 1);
+
+  function xPos(i) { return pad.left + i * xStep; }
+  function yPos(v) { return pad.top + cH - ((v - minV) / (maxV - minV)) * cH; }
+
+  // Grid lines
+  ctx.strokeStyle = '#F0F0F0';
+  ctx.lineWidth = 1;
+  [2, 3, 4, 5].forEach(v => {
+    ctx.beginPath();
+    ctx.moveTo(pad.left, yPos(v));
+    ctx.lineTo(W - pad.right, yPos(v));
+    ctx.stroke();
+    ctx.fillStyle = '#AAA';
+    ctx.font = '10px Urbanist, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(v.toFixed(0) + '★', pad.left - 4, yPos(v) + 4);
+  });
+
+  // Danger zone fill (below 3)
+  ctx.fillStyle = 'rgba(232,71,63,0.06)';
+  ctx.fillRect(pad.left, yPos(3), cW, yPos(minV) - yPos(3));
+
+  // Danger threshold line
+  ctx.strokeStyle = 'rgba(232,71,63,0.3)';
+  ctx.setLineDash([4, 4]);
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(pad.left, yPos(3));
+  ctx.lineTo(W - pad.right, yPos(3));
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Area fill
+  ctx.beginPath();
+  ctx.moveTo(xPos(0), yPos(data[0].v));
+  data.forEach((d, i) => ctx.lineTo(xPos(i), yPos(d.v)));
+  ctx.lineTo(xPos(data.length - 1), H - pad.bottom);
+  ctx.lineTo(xPos(0), H - pad.bottom);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(13,13,13,0.04)';
+  ctx.fill();
+
+  // Line
+  ctx.beginPath();
+  data.forEach((d, i) => {
+    if (i === 0) ctx.moveTo(xPos(i), yPos(d.v));
+    else ctx.lineTo(xPos(i), yPos(d.v));
+  });
+  ctx.strokeStyle = '#0D0D0D';
+  ctx.lineWidth = 2;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // Dots
+  data.forEach((d, i) => {
+    const isLow = d.v < 3;
+    ctx.beginPath();
+    ctx.arc(xPos(i), yPos(d.v), isLow ? 5 : 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = isLow ? '#E8473F' : '#0D0D0D';
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  });
+
+  // Labels (every other)
+  ctx.fillStyle = '#888';
+  ctx.font = '9px Urbanist, sans-serif';
+  ctx.textAlign = 'center';
+  data.forEach((d, i) => {
+    if (i % 2 === 0) ctx.fillText(d.m, xPos(i), H - pad.bottom + 14);
+  });
+  // Always show dec 25 label (critical)
+  const decIdx = 11;
+  ctx.fillStyle = '#E8473F';
+  ctx.font = 'bold 9px Urbanist, sans-serif';
+  ctx.fillText(data[decIdx].m + ' ↓', xPos(decIdx), H - pad.bottom + 14);
+})();
+
+// ── VERMONT TREND CHART ──
+(function() {
+  const canvas = document.getElementById('vermontChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 360;
+  const H = 160;
+  canvas.width = W;
+  canvas.height = H;
+
+  const data = [
+    {m:'E25', v:4.20}, {m:'F25', v:4.40}, {m:'M25', v:3.67}, {m:'A25', v:4.60},
+    {m:'M25', v:4.27}, {m:'J25', v:4.50}, {m:'J25', v:4.75}, {m:'A25', v:4.60},
+    {m:'S25', v:4.45}, {m:'O25', v:4.40}, {m:'N25', v:4.67}, {m:'D25', v:4.86},
+    {m:'E26', v:5.00}, {m:'F26', v:4.00}, {m:'M26', v:5.00}, {m:'A26', v:4.00}
+  ];
+
+  const pad = {top:16, right:10, bottom:28, left:30};
+  const cW = W - pad.left - pad.right;
+  const cH = H - pad.top - pad.bottom;
+  const minV = 1, maxV = 5.2;
+  const xStep = cW / (data.length - 1);
+  function xPos(i) { return pad.left + i * xStep; }
+  function yPos(v) { return pad.top + cH - ((v - minV) / (maxV - minV)) * cH; }
+
+  [3,4,5].forEach(v => {
+    ctx.strokeStyle = '#F0F0F0'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.left, yPos(v)); ctx.lineTo(W - pad.right, yPos(v)); ctx.stroke();
+    ctx.fillStyle = '#BBB'; ctx.font = '9px sans-serif'; ctx.textAlign = 'right';
+    ctx.fillText(v+'★', pad.left - 3, yPos(v) + 3);
+  });
+
+  ctx.beginPath();
+  data.forEach((d,i) => { if (i===0) ctx.moveTo(xPos(i),yPos(d.v)); else ctx.lineTo(xPos(i),yPos(d.v)); });
+  ctx.lineTo(xPos(data.length-1), H-pad.bottom); ctx.lineTo(xPos(0), H-pad.bottom); ctx.closePath();
+  ctx.fillStyle = 'rgba(46,204,113,0.08)'; ctx.fill();
+
+  ctx.beginPath();
+  data.forEach((d,i) => { if (i===0) ctx.moveTo(xPos(i),yPos(d.v)); else ctx.lineTo(xPos(i),yPos(d.v)); });
+  ctx.strokeStyle = '#2ECC71'; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.stroke();
+
+  data.forEach((d,i) => {
+    ctx.beginPath(); ctx.arc(xPos(i), yPos(d.v), 3, 0, Math.PI*2);
+    ctx.fillStyle = '#2ECC71'; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.stroke();
+  });
+
+  ctx.fillStyle = '#AAA'; ctx.font = '8px sans-serif'; ctx.textAlign = 'center';
+  data.forEach((d,i) => { if (i % 3 === 0) ctx.fillText(d.m, xPos(i), H - pad.bottom + 12); });
+})();
+</script>
+
+</body>
+</html>
